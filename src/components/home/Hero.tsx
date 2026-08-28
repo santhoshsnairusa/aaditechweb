@@ -36,7 +36,7 @@ export default function Hero() {
     };
 
     return (
-        <div className="relative bg-secondary-900 overflow-hidden min-h-[90vh] flex flex-col justify-center">
+        <div className="relative bg-secondary-900 overflow-hidden min-h-[70vh] lg:min-h-[90vh] flex flex-col justify-center">
             {/* Click to Skip Overlay */}
             {!showContent && (
                 <div onClick={handleSkipVideo} className="absolute inset-0 z-[5] cursor-pointer" title="Click to skip video"></div>
@@ -45,14 +45,15 @@ export default function Hero() {
             {/* Background Video */}
             <video
                 ref={videoRef}
-                className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-100 sm:scale-110 md:scale-[1.2] lg:scale-[1.27] transition-transform duration-700"
-                src="/videos/to_showcase_web_home_page_back.mp4"
+                className="absolute inset-0 w-full h-full object-contain md:object-cover object-center z-0 scale-[1.28] md:scale-100 lg:scale-[1.28] pointer-events-none transition-transform duration-700"
                 muted
                 playsInline
                 autoPlay
                 onEnded={handleVideoEnded}
                 onCanPlay={(e) => { e.currentTarget.playbackRate = 0.75; }}
-            />
+            >
+                <source src="/videos/to_showcase_web_home_page_back.mp4" type="video/mp4" />
+            </video>
 
             {/* Dark overlay to ensure text contrast when content is visible */}
             <div className={`absolute inset-0 bg-secondary-900 transition-opacity duration-1000 z-0 ${showContent ? 'opacity-80' : 'opacity-30'}`}></div>
