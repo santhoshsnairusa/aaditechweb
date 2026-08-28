@@ -1,0 +1,392 @@
+[
+  {
+    "id": "product-001",
+    "name": "Absolute Encoder Tester",
+    "slug": "absolute-encoder-tester",
+    "category": "Test & Validation Systems",
+    "shortDescription": "Precision automated validation tool for absolute hardware encoders.",
+    "description": "The Absolute Encoder Tester is designed to provide comprehensive, high-speed validation for a variety of absolute encoder modules used in critical motion control architectures. It combines robust measurement capabilities with a deterministic validation interface ensuring quality standards in aerospace and defense systems.",
+    "image": "/images/products/absolute-encoder-tester.jpg",
+    "features": [
+      "High-resolution error mapping",
+      "Real-time diagnostic feedback",
+      "Ruggedized, portable form factor",
+      "Automated test sequencing"
+    ],
+    "specifications": [
+      { "label": "Interface", "value": "SSI/BiSS/EnDat" },
+      { "label": "Max Resolution", "value": "32-bit" },
+      { "label": "Operating Temp", "value": "-40°C to +85°C" }
+    ],
+    "applications": [
+      "Aerospace Actuator Validation",
+      "Defense Turret Control",
+      "Precision Robotics Validation"
+    ],
+    "featured": true
+  },
+  {
+    "id": "product-002",
+    "name": "Cable Harness Tester",
+    "slug": "cable-harness-tester",
+    "category": "Test & Validation Systems",
+    "shortDescription": "Automated test equipment ensuring reliable connections in complex multi-core harnesses.",
+    "description": "Multi-point precision cable analysis tool providing rapid continuity, resistance, and high-voltage dielectric testing for complex aerospace and military wiring harnesses.",
+    "image": "/images/products/cable-harness-tester.jpg",
+    "features": [
+      "Programmable multi-point continuity testing",
+      "High-voltage insulation resistance validation",
+      "Quick-change interface adapters",
+      "Data logging with traceability"
+    ],
+    "specifications": [
+      { "label": "Test Points", "value": "Up to 1024" },
+      { "label": "Hipot Voltage", "value": "Up to 1500VDC / 1000VAC" },
+      { "label": "Resistance Measurement", "value": "0.1 Ω to 1 GΩ" }
+    ],
+    "applications": [
+      "Avionics Wiring Check",
+      "Military Transport Maintenance",
+      "Industrial Control Panel Validation"
+    ],
+    "featured": true
+  },
+  {
+    "id": "product-003",
+    "name": "2x3 Relay Box",
+    "slug": "2x3-relay-box",
+    "category": "Data Acquisition & Control",
+    "shortDescription": "Ruggedized 2x3 switching matrix for signal routing in demanding environments.",
+    "description": "A miniaturized, robust relay matrix providing flexible signal routing for instrumentation and remote switching tasks. Built for harsh vibration and temperature extremes.",
+    "image": "/images/products/relay-box.jpg",
+    "features": [
+      "Hermetically sealed relays",
+      "Low insertion loss",
+      "Wide payload operational voltage",
+      "Military-grade connectors"
+    ],
+    "specifications": [
+      { "label": "Matrix Size", "value": "2x3" },
+      { "label": "Contact Rating", "value": "2A at 30VDC" },
+      { "label": "Shock Resistance", "value": "MIL-STD-810G compliant" }
+    ],
+    "applications": [
+      "Automated Test Environments",
+      "Field Deployment Signal Routing",
+      "Telemetry Simulation"
+    ],
+    "featured": false
+  },
+  {
+    "id": "product-004",
+    "name": "Isolated RS422 to USB Converter",
+    "slug": "isolated-rs422-to-usb-converter",
+    "category": "Protocol & Interface Solutions",
+    "shortDescription": "Galvanically isolated interface adapter enabling RS422 serial communications over USB.",
+    "description": "Translates legacy RS422 avionics data into standard USB streams seamlessly. It offers uncompromising galvanic isolation avoiding ground loops and protecting sensitive equipment.",
+    "image": "/images/products/rs422-usb-converter.jpg",
+    "features": [
+      "Optical isolation on all data lines",
+      "Plug-and-play USB operation",
+      "Rugged metal enclosure",
+      "High-speed baud rate support"
+    ],
+    "specifications": [
+      { "label": "Isolation Rating", "value": "2.5 kV RMS" },
+      { "label": "Data Rate", "value": "Up to 3 Mbps" },
+      { "label": "Interface Connectors", "value": "DB9 (RS422) to USB-B" }
+    ],
+    "applications": [
+      "Ground Support Equipment",
+      "Legacy Avionics Interfacing",
+      "Industrial Control Systems"
+    ],
+    "featured": true
+  },
+  {
+    "id": "product-005",
+    "name": "TTL to Ethernet Converter",
+    "slug": "ttl-to-ethernet-converter",
+    "category": "Protocol & Interface Solutions",
+    "shortDescription": "Compact protocol converter bridging serial TTL electronics onto modern Ethernet networks.",
+    "description": "An embeddable or standalone bridge linking low-level TTL data directly into TCP/IP networks, allowing legacy microcontrollers and logic boards to enter modern IT networks.",
+    "image": "/images/products/ttl-ethernet-converter.jpg",
+    "features": [
+      "TCP/UDP protocol support",
+      "Low power consumption",
+      "Auto-negotiating RJ45 ethernet",
+      "Configurable via Web GUI"
+    ],
+    "specifications": [
+      { "label": "Network Speed", "value": "10/100 Mbps" },
+      { "label": "TTL Voltages", "value": "3.3V and 5V compatible" },
+      { "label": "Power Input", "value": "5V DC" }
+    ],
+    "applications": [
+      "IoT Legacy Device Upgrades",
+      "Remote Sensor Data Publishing",
+      "Distributed Data Logging"
+    ],
+    "featured": false
+  },
+  {
+    "id": "product-006",
+    "name": "Embedded Protocol Interface Card",
+    "slug": "embedded-protocol-interface-card",
+    "category": "Embedded Computing",
+    "shortDescription": "Versatile multi-protocol OEM interface card built around high-density FPGAs.",
+    "description": "An integrated board supporting concurrent processing of multiple avionics and industrial protocols (MIL-STD-1553, ARINC 429, RS485). Designed to be embedded natively into higher level system controllers.",
+    "image": "/images/products/protocol-interface-card.jpg",
+    "features": [
+      "Multiple IP core instantiations",
+      "Host communication via PCIe/VME",
+      "Real-time deterministic scheduling",
+      "High-reliability DDR3/DDR4 buffering"
+    ],
+    "specifications": [
+      { "label": "Core Processor", "value": "AMD Zynq / Xilinx FPGA" },
+      { "label": "Protocols", "value": "MIL-STD-1553B, ARINC 429, RS422/485" },
+      { "label": "Form Factor", "value": "Custom OEM" }
+    ],
+    "applications": [
+      "Flight Control Actuation Systems",
+      "Defense Electronic Warfare",
+      "Automated Test Simulators"
+    ],
+    "featured": true
+  },
+  {
+    "id": "product-007",
+    "name": "Integrated Controller Card",
+    "slug": "integrated-controller-card",
+    "category": "Embedded Computing",
+    "shortDescription": "High-performance processing unit tailored for mission-critical embedded systems.",
+    "description": "A purpose-built microcontroller platform bridging logic, multi-analog acquisition, and power driver outputs into a single robust unit.",
+    "image": "/images/products/integrated-controller-card.jpg",
+    "features": [
+      "Multi-core ARM architecture",
+      "Integrated analog front-end",
+      "Fault-tolerant execution environments",
+      "Rich IO capability"
+    ],
+    "specifications": [
+      { "label": "Processor", "value": "ARM Cortex-A53 / R5" },
+      { "label": "Analog IO", "value": "16-ch 24-bit ADC, 8-ch 16-bit DAC" },
+      { "label": "Compliance", "value": "DO-254/DO-178C certifiable core" }
+    ],
+    "applications": [
+      "UAV Flight Controllers",
+      "Gimbal Stabilization",
+      "Engine Control Units"
+    ],
+    "featured": false
+  },
+  {
+    "id": "product-008",
+    "name": "SoC-Based VPX Protocol Module",
+    "slug": "soc-based-vpx-protocol-module",
+    "category": "VPX / VME Solutions",
+    "shortDescription": "Next-generation VPX module utilizing advanced System-on-Chip technology.",
+    "description": "A modern 3U/6U OpenVPX module integrating an ARM/FPGA SoC to deliver protocol translation, real-time control, and massive signal processing capacity in a VITA framework.",
+    "image": "/images/products/vpx-protocol-module.jpg",
+    "features": [
+      "VITA 46/65 OpenVPX Compliance",
+      "Massive FPGA programmable logic",
+      "High-speed backplane interfaces",
+      "Conduction or air-cooled options"
+    ],
+    "specifications": [
+      { "label": "Form Factor", "value": "3U / 6U VPX" },
+      { "label": "System-on-Chip", "value": "Xilinx Zynq UltraScale+ MPSoC" },
+      { "label": "Backplane Dataplane", "value": "PCIe Gen 3, 10/40 Gigabit Ethernet" }
+    ],
+    "applications": [
+      "Radar Processing Systems",
+      "SDR (Software Defined Radio)",
+      "High-End Electronic Warfare"
+    ],
+    "featured": true
+  },
+  {
+    "id": "product-009",
+    "name": "SoC-Based Single Board Computer",
+    "slug": "soc-based-single-board-computer",
+    "category": "Embedded Computing",
+    "shortDescription": "Standalone SBC engineered around high-density SoC combining processing and FPGA fabric.",
+    "description": "Delivers general-purpose compute matched with deep hardware acceleration via onboard programmable logic, targeted at SWaP-constrained applications.",
+    "image": "/images/products/soc-sbc.jpg",
+    "features": [
+      "Linux/RTOS BSP support",
+      "Ruggedized memory components",
+      "On-board storage (eMMC / NVMe)",
+      "Rich mezzanine expansion"
+    ],
+    "specifications": [
+      { "label": "Processor", "value": "Quad-core ARM Cortex-A53" },
+      { "label": "Memory", "value": "Up to 8GB DDR4 w/ ECC" },
+      { "label": "Expansion", "value": "FMC / XMC sites" }
+    ],
+    "applications": [
+      "Image Processing Nodes",
+      "Autonomous Navigation",
+      "Tactical Communications Compute"
+    ],
+    "featured": true
+  },
+  {
+    "id": "product-010",
+    "name": "PCIe-Based Multi-Protocol Data Acquisition System",
+    "slug": "pcie-based-multi-protocol-daq",
+    "category": "Data Acquisition & Control",
+    "shortDescription": "High-throughput PCIe card interfacing numerous avionics protocols directly to host PCs.",
+    "description": "Transforms commercial or industrial PCs into powerful flight test or simulation systems by ingesting varied data protocols into system memory with minimal latency.",
+    "image": "/images/products/pcie-daq.jpg",
+    "features": [
+      "Direct memory access (DMA)",
+      "Nano-second timestamping",
+      "Simultaneous transmit and receive modes",
+      "Comprehensive SDK (C/C++, Python)"
+    ],
+    "specifications": [
+      { "label": "Bus Interface", "value": "PCIe x4 Gen 2/3" },
+      { "label": "Supported Protocols", "value": "AFDX, MIL-STD-1553, ARINC 429" },
+      { "label": "Time Sync", "value": "IRIG-B / IEEE-1588" }
+    ],
+    "applications": [
+      "Desktop Simulation Labs",
+      "Production Floor Acceptance Testing",
+      "Avionics Iron Birds"
+    ],
+    "featured": false
+  },
+  {
+    "id": "product-011",
+    "name": "Miniaturized On-Board Computer",
+    "slug": "miniaturized-on-board-computer",
+    "category": "Embedded Computing",
+    "shortDescription": "Ultra-compact processing node intended for severe SWaP-C constrained systems.",
+    "description": "An incredibly small yet fully functional compute node offering deterministic real-time processing and payload management for small-form-factor aerospace designs.",
+    "image": "/images/products/mini-obc.jpg",
+    "features": [
+      "Micro form factor footprint",
+      "Low power sleep modes",
+      "Radiation tolerant design methodologies",
+      "CAN bus / UART payload interfaces"
+    ],
+    "specifications": [
+      { "label": "Weight", "value": "< 100 grams" },
+      { "label": "Power Consumption", "value": "< 3 Watts" },
+      { "label": "Processors", "value": "Radiation-hardened Microcontrollers" }
+    ],
+    "applications": [
+      "CubeSats / SmallSats",
+      "Expendable Launch Vehicles",
+      "Smart Munitions"
+    ],
+    "featured": false
+  },
+  {
+    "id": "product-012",
+    "name": "Control Communication and Data Acquisition System",
+    "slug": "control-communication-daq-system",
+    "category": "Data Acquisition & Control",
+    "shortDescription": "Integrated rack-mount system for comprehensive signal monitoring and remote communication.",
+    "description": "An all-in-one appliance bridging high-end analog signal acquisition with long-haul telecommunication interfaces. Best suited for command and control shelter environments.",
+    "image": "/images/products/control-daq.jpg",
+    "features": [
+      "Rack mountable 19-inch chassis",
+      "Modular card slot architecture",
+      "Dual redundant power supplies",
+      "Web-based SCADA interface"
+    ],
+    "specifications": [
+      { "label": "Chassis Form Factor", "value": "2U / 4U 19-Inch Rack" },
+      { "label": "Analog Bandwidth", "value": "DC to 10 MHz" },
+      { "label": "Uplink Interfaces", "value": "Gigabit Optic / Satellite Modem" }
+    ],
+    "applications": [
+      "Range Safety Monitoring",
+      "Ground Station Telemetry",
+      "Distributed Test Ranges"
+    ],
+    "featured": false
+  },
+  {
+    "id": "product-013",
+    "name": "6U VME SoC-Based SBC",
+    "slug": "6u-vme-soc-based-sbc",
+    "category": "VPX / VME Solutions",
+    "shortDescription": "Modernized processing board bringing SoC capability into legacy VME chassis infrastructures.",
+    "description": "Extend the life of mature VME64x platforms by introducing modern multi-core processing and FPGA logic without the cost of complete system overhauls.",
+    "image": "/images/products/6u-vme.jpg",
+    "features": [
+      "VME64x backward compatibility",
+      "Tsi148 class VME bridge technology",
+      "Multiple Gigabit Ethernet front panels",
+      "Extended lifecycle support"
+    ],
+    "specifications": [
+      { "label": "Platform Standard", "value": "VITA 1.5 VME64x" },
+      { "label": "Processing Complex", "value": "NXP QorIQ / ARM SoC" },
+      { "label": "Operating Temp", "value": "-40°C to +71°C" }
+    ],
+    "applications": [
+      "Naval Radar Platform Upgrades",
+      "Legacy Industrial Controls",
+      "Simulation Equipment Refurbishment"
+    ],
+    "featured": false
+  },
+  {
+    "id": "product-014",
+    "name": "BEL Checkout Cards",
+    "slug": "bel-checkout-cards",
+    "category": "Test & Validation Systems",
+    "shortDescription": "Custom diagnostic and validation mezzanine cards developed for standardized defense checkouts.",
+    "description": "Pre-qualified checkout and diagnostic stimulus cards to interface accurately with existing deployment hardware architecture models in standard subracks.",
+    "image": "/images/products/bel-checkout.jpg",
+    "features": [
+      "Rigid electrical fault simulation",
+      "Loopback test modes",
+      "Overcurrent / Overvoltage protection",
+      "High density pinout"
+    ],
+    "specifications": [
+      { "label": "Connector Type", "value": "DIN 41612" },
+      { "label": "Fault Injection", "value": "Software commanded Short/Open" },
+      { "label": "Compliance", "value": "Customer specific defense standard" }
+    ],
+    "applications": [
+      "Subsystem Pre-Flight Checks",
+      "Depot Level Maintenance",
+      "Automated Line Replaceable Unit (LRU) Testing"
+    ],
+    "featured": false
+  },
+  {
+    "id": "product-015",
+    "name": "3U VPX Single Channel – ADA/MMDC",
+    "slug": "3u-vpx-single-channel-ada-mmdc",
+    "category": "VPX / VME Solutions",
+    "shortDescription": "High-reliability single-channel processing blade targeted for ADA/MMDC avionics clusters.",
+    "description": "Built specifically for modern airborne architecture, providing resilient single-channel data translation and system monitoring via high-speed 3U OpenVPX interconnected fabrics.",
+    "image": "/images/products/3u-vpx-ada.jpg",
+    "features": [
+      "VITA 65 compliant 3U form factor",
+      "Isolated power rails",
+      "Advanced thermal management",
+      "DO-254 certifiable firmware blocks"
+    ],
+    "specifications": [
+      { "label": "Form Factor", "value": "3U OpenVPX" },
+      { "label": "Cooling", "value": "Conduction Cooled (VITA 48.2)" },
+      { "label": "Interfaces", "value": "PCIe, Ethernet dataplane" }
+    ],
+    "applications": [
+      "Aircraft Data Acquisition",
+      "Mission Management Computers",
+      "Display Control Processing"
+    ],
+    "featured": true
+  }
+]
