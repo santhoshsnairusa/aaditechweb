@@ -37,6 +37,7 @@ export default function Hero() {
                 playsInline
                 autoPlay
                 onEnded={handleVideoEnded}
+                onCanPlay={(e) => { e.currentTarget.playbackRate = 0.75; }}
             />
 
             {/* Dark overlay to ensure text contrast when content is visible */}
