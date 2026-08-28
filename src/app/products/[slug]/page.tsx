@@ -40,7 +40,7 @@ export default async function ProductDetailPage({ params }: Props) {
         <div className="bg-white min-h-screen pb-20">
             {/* Breadcrumb Header */}
             <div className="bg-secondary-50 border-b border-secondary-200 py-4">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center text-sm text-secondary-500">
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center text-sm text-secondary-500">
                     <Link href="/" className="hover:text-primary-600">Home</Link>
                     <ChevronRight className="w-4 h-4 mx-2" />
                     <Link href="/products" className="hover:text-primary-600">Products</Link>
@@ -49,7 +49,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-12">
                 <Link href="/products" className="inline-flex items-center text-sm font-medium text-secondary-500 hover:text-primary-600 mb-8 transition-colors">
                     <ChevronLeft className="w-4 h-4 mr-1" /> Back to Products
                 </Link>

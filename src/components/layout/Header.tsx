@@ -21,16 +21,19 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-secondary-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="flex items-center gap-2 group">
-                            <div className="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-xl group-hover:bg-primary-600 transition-colors">
-                                A
-                            </div>
-                            <span className="font-bold text-xl text-secondary-900 tracking-tight">
-                                AADIT<span className="text-primary-600">TECH</span>
+                        <Link href="/" className="flex items-center gap-2 group flex-row">
+                            {/* Mobile Logo */}
+                            <img src="/images/header_logo.png" alt="AADIT Logo Mobile" className="h-12 w-auto object-contain bg-transparent md:hidden" />
+
+                            {/* Desktop Logo */}
+                            <img src="/images/Logo_sample_no_text_white.png" alt="AADIT Logo" className="h-16 w-auto object-contain bg-transparent hidden md:block" />
+
+                            <span className="font-bold italic text-lg text-secondary-900 tracking-tight hidden md:inline-block">
+                                AADIT <span className="text-black">TECHNO SOLUTIONS</span>
                             </span>
                         </Link>
                     </div>

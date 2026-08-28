@@ -63,7 +63,7 @@ export default function CapabilitiesPage() {
     return (
         <div className="bg-white min-h-screen">
             <div className="bg-secondary-50 py-16 border-b border-secondary-200">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-4xl font-extrabold text-secondary-900 tracking-tight">Engineering Capabilities</h1>
                     <p className="mt-4 text-xl text-secondary-600 max-w-3xl">
                         Our multidisciplinary expertise directly translates to reduced technical risk and accelerated deployment for our customers.
@@ -71,7 +71,7 @@ export default function CapabilitiesPage() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                     {capabilities.map((section, idx) => (
                         <div key={idx} className="relative pl-8">

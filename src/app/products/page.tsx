@@ -17,7 +17,7 @@ export default async function ProductsPage() {
         <div className="bg-secondary-50 min-h-screen">
             {/* Page Header */}
             <div className="bg-secondary-900 py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-4xl font-extrabold text-white tracking-tight sm:text-5xl">
                         Product Portfolio
                     </h1>
@@ -27,7 +27,7 @@ export default async function ProductsPage() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row gap-8">
+            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row gap-8">
 
                 {/* Sidebar / Filters (Static for MVP) */}
                 <div className="w-full md:w-64 flex-shrink-0">
@@ -63,18 +63,14 @@ export default async function ProductsPage() {
 
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                                     {categoryProducts.map(product => (
-                                        <div key={product.id} className="bg-white rounded-xl border border-secondary-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
-                                            <div className="h-48 bg-secondary-100 relative overflow-hidden flex items-center justify-center p-4">
-                                                <div className="absolute inset-0 bg-secondary-200 flex items-center justify-center text-secondary-400">
-                                                    <span className="font-medium text-sm">Image: {product.image.split('/').pop()}</span>
-                                                </div>
-                                                {/* Wait for actual images to use next/image properly without errors, or use fallback */}
+                                        <div key={product.id} className="bg-white rounded-xl border border-secondary-200 shadow-sm overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
+                                            <div className="h-56 bg-white relative overflow-hidden flex items-center justify-center">
                                                 <Image
                                                     src={product.image}
                                                     alt={product.name}
                                                     fill
                                                     unoptimized
-                                                    className="object-contain z-10"
+                                                    className="object-contain z-10 p-6 drop-shadow-lg group-hover:scale-105 transition-transform duration-500"
                                                 />
                                             </div>
                                             <div className="p-6 flex-grow flex flex-col">

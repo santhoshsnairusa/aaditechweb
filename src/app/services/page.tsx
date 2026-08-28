@@ -64,7 +64,7 @@ export default function ServicesPage() {
     return (
         <div className="bg-secondary-50 min-h-screen pb-20">
             <div className="bg-secondary-900 py-20 relative">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
                         Core Engineering Services
                     </h1>
@@ -74,7 +74,7 @@ export default function ServicesPage() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {services.map((service) => (
                         <div key={service.id} className="bg-white rounded-2xl shadow-md border border-secondary-200 overflow-hidden flex flex-col h-full transform hover:-translate-y-1 transition-transform duration-300">

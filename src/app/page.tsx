@@ -13,7 +13,7 @@ export default async function Home() {
 
       {/* Company Introduction */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div>
               <h2 className="text-3xl font-extrabold text-secondary-900 tracking-tight sm:text-4xl mb-6">
@@ -60,7 +60,7 @@ export default async function Home() {
 
       {/* Core Services */}
       <section className="py-20 bg-secondary-50 border-t border-secondary-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-extrabold text-secondary-900 tracking-tight sm:text-4xl">Core Services</h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-secondary-500">
@@ -113,7 +113,7 @@ export default async function Home() {
 
       {/* Featured Products */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-3xl font-extrabold text-secondary-900 tracking-tight sm:text-4xl relative inline-block">
@@ -163,7 +163,7 @@ export default async function Home() {
       {/* Quick CTA */}
       <section className="bg-primary-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative z-10 flex flex-col lg:flex-row items-center justify-between">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative z-10 flex flex-col lg:flex-row items-center justify-between">
           <div className="text-center lg:text-left mb-8 lg:mb-0">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
               Ready to discuss your project?

@@ -4,17 +4,15 @@ import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 export default function Footer() {
     return (
         <footer className="bg-secondary-900 border-t border-secondary-800 text-white pt-16 pb-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
                     {/* Company Info */}
                     <div>
                         <div className="flex items-center gap-2 mb-6">
-                            <div className="w-8 h-8 bg-primary-600 rounded flex items-center justify-center font-bold text-xl">
-                                A
-                            </div>
-                            <span className="font-bold text-xl tracking-tight">
-                                AADIT<span className="text-secondary-400">TECH</span>
+                            <img src="/images/Fav_icon_white.png" alt="AADIT Logo" className="w-8 h-8 object-contain" />
+                            <span className="font-semibold italic text-sm tracking-wider text-white">
+                                AADIT TECHNO SOLUTIONS
                             </span>
                         </div>
                         <p className="text-secondary-400 text-sm leading-relaxed mb-6">

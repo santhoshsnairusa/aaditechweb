@@ -67,7 +67,7 @@ export default function IndustriesPage() {
                     <rect width="100%" height="100%" strokeWidth="0" fill="url(#pattern-industries)" />
                 </svg>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 text-center">
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 text-center">
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-6 mt-10">Target Industries</h1>
                     <p className="max-w-2xl text-xl text-secondary-300 mx-auto">
                         Domain-specific engineering intelligence. We build the vital electronic subsystems that keep complex modern industries securely operating.
@@ -75,7 +75,7 @@ export default function IndustriesPage() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 -mt-10 z-10 relative">
+            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20 -mt-10 z-10 relative">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {industries.map((ind, idx) => (
                         <div key={idx} className="bg-white p-8 rounded-2xl shadow-xl shadow-secondary-900/5 group hover:ring-2 ring-primary-500 transition-all duration-300">

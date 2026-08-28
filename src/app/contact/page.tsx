@@ -133,7 +133,7 @@ export default function ContactPage() {
         <div className="bg-secondary-50 min-h-screen">
             {/* Header */}
             <div className="bg-secondary-900 py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl font-extrabold text-white tracking-tight sm:text-5xl">
                         Contact AADIT
                     </h1>
@@ -143,7 +143,7 @@ export default function ContactPage() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-8">
+            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
                     {/* Contact Details pane */}

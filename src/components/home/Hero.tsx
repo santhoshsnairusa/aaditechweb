@@ -50,25 +50,25 @@ export default function Hero() {
 
             {/* Content Container */}
             <div
-                className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-1000 transform
+                className={`w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-1000 transform
                     ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}
             >
                 <div className="w-full flex flex-col mx-auto py-10 mt-16 sm:mt-24 lg:mt-32">
-                    <div className="self-end inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-900/50 border border-primary-800 text-primary-300 text-sm font-medium mb-8">
+                    <div className="self-end inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-900/50 border border-primary-800 text-primary-300 text-sm font-normal mb-8">
                         <span className="flex h-2 w-2 rounded-full bg-primary-500"></span>
                         Advanced Engineering Solutions
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight mb-8 flex flex-col gap-2 w-full">
+                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold text-white tracking-tight mb-8 flex flex-col gap-2 w-full">
                         <span className={`text-right w-full block transition-transform duration-1000 delay-300 ${showContent ? 'translate-x-0' : 'translate-x-10'}`}>
                             Engineering Intelligence.
                         </span>
-                        <span className={`text-left text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-500 w-full block transition-transform duration-1000 delay-500 ${showContent ? 'translate-x-0' : '-translate-x-10'}`}>
+                        <span className={`text-left text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-500 w-full block pb-2 transition-transform duration-1000 delay-500 ${showContent ? 'translate-x-0' : '-translate-x-10'}`}>
                             Building Reliable Technology.
                         </span>
                     </h1>
 
-                    <p className={`mt-4 text-lg sm:text-xl text-secondary-300 max-w-3xl leading-relaxed mb-10 text-left block transition-opacity duration-1000 delay-700 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+                    <p className={`mt-4 text-base sm:text-lg font-light text-secondary-300 max-w-3xl leading-relaxed mb-10 text-left block transition-opacity duration-1000 delay-700 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
                         AADIT Techno Solutions delivers advanced embedded systems, semiconductor engineering, AI/ML, FPGA, automated testing, communication, and edge-computing solutions for demanding applications.
                     </p>
 
@@ -110,8 +110,8 @@ export default function Hero() {
                     ].map((item, idx) => (
                         <div key={idx} className="flex flex-col gap-3">
                             <item.icon className="h-8 w-8 text-primary-500" />
-                            <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                            <p className="text-secondary-400 text-sm">{item.desc}</p>
+                            <h3 className="text-base font-medium text-white">{item.title}</h3>
+                            <p className="text-secondary-400 text-sm font-light">{item.desc}</p>
                         </div>
                     ))}
                 </div>
