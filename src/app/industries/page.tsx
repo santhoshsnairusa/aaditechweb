@@ -46,7 +46,7 @@ export default function IndustriesPage() {
     ];
 
     return (
-        <div className="bg-secondary-50 min-h-screen">
+        <div className="bg-secondary-50 dark:bg-secondary-950 min-h-screen">
             <div className="bg-secondary-900 py-20 relative isolate overflow-hidden">
                 <svg
                     className="absolute inset-0 -z-10 h-full w-full stroke-secondary-800 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -78,12 +78,12 @@ export default function IndustriesPage() {
             <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20 -mt-10 z-10 relative">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {industries.map((ind, idx) => (
-                        <div key={idx} className="bg-white p-8 rounded-2xl shadow-xl shadow-secondary-900/5 group hover:ring-2 ring-primary-500 transition-all duration-300">
+                        <div key={idx} className="bg-white dark:bg-secondary-900 p-8 rounded-2xl shadow-xl shadow-secondary-900/5 group hover:ring-2 ring-primary-500 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-500/40 dark:hover:shadow-orange-500/40">
                             <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6 text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                                 <ind.icon className="w-7 h-7" />
                             </div>
-                            <h3 className="text-xl font-extrabold text-secondary-900 mb-4">{ind.title}</h3>
-                            <p className="text-secondary-600 text-sm leading-relaxed">
+                            <h3 className="text-xl font-extrabold text-secondary-900 dark:text-white mb-4">{ind.title}</h3>
+                            <p className="text-secondary-600 dark:text-secondary-300 text-sm leading-relaxed">
                                 {ind.desc}
                             </p>
                         </div>

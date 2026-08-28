@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronRight } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,17 +21,14 @@ export default function Header() {
     ];
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-secondary-200">
+        <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-secondary-200 shadow-md shadow-orange-500/50">
             <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
                         <Link href="/" className="flex items-center gap-2 group flex-row">
-                            {/* Mobile Logo */}
-                            <img src="/images/header_logo.png" alt="AADIT Logo Mobile" className="h-12 w-auto object-contain bg-transparent md:hidden" />
-
-                            {/* Desktop Logo */}
-                            <img src="/images/Logo_sample_no_text_white.png" alt="AADIT Logo" className="h-16 w-auto object-contain bg-transparent hidden md:block" />
+                            {/* Global Logo */}
+                            <img src="/images/Logo_steel_no_bg_4.png" alt="AADIT Logo" className="h-12 md:h-16 w-auto object-contain bg-transparent" />
 
                             <span className="font-bold italic text-lg text-secondary-900 tracking-tight hidden md:inline-block">
                                 AADIT <span className="text-black">TECHNO SOLUTIONS</span>
@@ -39,7 +37,7 @@ export default function Header() {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex md:space-x-8">
+                    <nav className="hidden lg:flex items-center md:space-x-8">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
@@ -50,12 +48,14 @@ export default function Header() {
                                 {link.name}
                             </Link>
                         ))}
+                        <ThemeToggle />
                     </nav>
 
 
 
                     {/* Mobile menu button */}
-                    <div className="flex items-center lg:hidden">
+                    <div className="flex items-center gap-2 lg:hidden">
+                        <ThemeToggle />
                         <button
                             type="button"
                             className="inline-flex items-center justify-center p-2 rounded-md text-secondary-400 hover:text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"

@@ -26,12 +26,26 @@ export default function Hero() {
         setShowContent(true);
     };
 
+    const handleSkipVideo = () => {
+        if (!showContent) {
+            setShowContent(true);
+            if (videoRef.current) {
+                videoRef.current.pause();
+            }
+        }
+    };
+
     return (
         <div className="relative bg-secondary-900 overflow-hidden min-h-[90vh] flex flex-col justify-center">
+            {/* Click to Skip Overlay */}
+            {!showContent && (
+                <div onClick={handleSkipVideo} className="absolute inset-0 z-[5] cursor-pointer" title="Click to skip video"></div>
+            )}
+
             {/* Background Video */}
             <video
                 ref={videoRef}
-                className="absolute inset-0 w-full h-full object-cover z-0 scale-[1.27]"
+                className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-100 sm:scale-110 md:scale-[1.2] lg:scale-[1.27] transition-transform duration-700"
                 src="/videos/to_showcase_web_home_page_back.mp4"
                 muted
                 playsInline

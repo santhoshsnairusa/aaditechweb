@@ -62,7 +62,7 @@ export default function ServicesPage() {
     ];
 
     return (
-        <div className="bg-secondary-50 min-h-screen pb-20">
+        <div className="bg-secondary-50 dark:bg-secondary-950 min-h-screen pb-20">
             <div className="bg-secondary-900 py-20 relative">
                 <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
@@ -77,21 +77,21 @@ export default function ServicesPage() {
             <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {services.map((service) => (
-                        <div key={service.id} className="bg-white rounded-2xl shadow-md border border-secondary-200 overflow-hidden flex flex-col h-full transform hover:-translate-y-1 transition-transform duration-300">
+                        <div key={service.id} className="bg-white dark:bg-secondary-900 rounded-2xl shadow-md border border-secondary-200 dark:border-secondary-700 overflow-hidden flex flex-col h-full transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/40 dark:hover:shadow-orange-500/40">
                             <div className="p-8 flex flex-col flex-grow">
                                 <div className="w-16 h-16 bg-primary-50 text-primary-600 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
                                     <service.icon className="w-8 h-8" />
                                 </div>
-                                <h2 className="text-2xl font-bold text-secondary-900 mb-4">{service.title}</h2>
-                                <p className="text-secondary-600 mb-8 flex-grow leading-relaxed">
+                                <h2 className="text-2xl font-bold text-secondary-900 dark:text-white mb-4">{service.title}</h2>
+                                <p className="text-secondary-600 dark:text-secondary-300 mb-8 flex-grow leading-relaxed">
                                     {service.description}
                                 </p>
 
-                                <div className="border-t border-secondary-100 pt-6">
-                                    <h3 className="text-sm font-bold text-secondary-900 uppercase tracking-wider mb-4">Key Capabilities</h3>
+                                <div className="border-t border-secondary-100 dark:border-secondary-800 pt-6">
+                                    <h3 className="text-sm font-bold text-secondary-900 dark:text-white uppercase tracking-wider mb-4">Key Capabilities</h3>
                                     <ul className="space-y-3">
                                         {service.capabilities.map((cap, idx) => (
-                                            <li key={idx} className="flex items-center text-sm font-medium text-secondary-700">
+                                            <li key={idx} className="flex items-center text-sm font-medium text-secondary-700 dark:text-secondary-200">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mr-3 flex-shrink-0"></div>
                                                 {cap}
                                             </li>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-white dark:bg-secondary-900 min-h-screen">
             {/* Hero Section */}
             <div className="bg-secondary-900 py-20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-primary-900/20"></div>
@@ -30,8 +30,8 @@ export default function AboutPage() {
                         {/* Our Story / Expertise */}
                         <div className="space-y-8">
                             <section>
-                                <h2 className="text-3xl font-bold text-secondary-900 mb-6">Our Foundation</h2>
-                                <div className="prose prose-primary text-secondary-600 max-w-none">
+                                <h2 className="text-3xl font-bold text-secondary-900 dark:text-white mb-6">Our Foundation</h2>
+                                <div className="prose prose-primary text-secondary-600 dark:text-secondary-300 max-w-none">
                                     <p className="text-lg leading-relaxed mb-4">
                                         AADIT Techno Solutions was founded in 2022 by experienced engineers with deep roots and strong industry expertise in mission-critical technology domains. From day one, our mission has been to bridge the gap between complex theoretical architecture and reliable, deployable hardware and software.
                                     </p>
@@ -42,9 +42,9 @@ export default function AboutPage() {
                             </section>
 
                             <section>
-                                <h2 className="text-3xl font-bold text-secondary-900 mb-6">Engineering Philosophy</h2>
-                                <div className="bg-secondary-50 p-6 rounded-xl border border-secondary-100">
-                                    <p className="text-secondary-700 italic border-l-4 border-primary-500 pl-4 py-1">
+                                <h2 className="text-3xl font-bold text-secondary-900 dark:text-white mb-6">Engineering Philosophy</h2>
+                                <div className="bg-secondary-50 dark:bg-secondary-950 p-6 rounded-xl border border-secondary-100 dark:border-secondary-800">
+                                    <p className="text-secondary-700 dark:text-secondary-200 italic border-l-4 border-primary-500 pl-4 py-1">
                                         "Innovation rooted in practical reliability. We design systems that perform flawlessly in the most demanding environments."
                                     </p>
                                 </div>
@@ -53,7 +53,7 @@ export default function AboutPage() {
 
                         {/* Key Value Propositions */}
                         <div className="mt-12 lg:mt-0">
-                            <h2 className="text-3xl font-bold text-secondary-900 mb-8">Our Commitments</h2>
+                            <h2 className="text-3xl font-bold text-secondary-900 dark:text-white mb-8">Our Commitments</h2>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {[
@@ -82,10 +82,10 @@ export default function AboutPage() {
                                         desc: "Methodical design practices grounded in aerospace-grade standards."
                                     }
                                 ].map((item, idx) => (
-                                    <div key={idx} className="bg-white p-6 rounded-xl border border-secondary-200 shadow-sm hover:border-primary-300 transition-colors">
+                                    <div key={idx} className="bg-white dark:bg-secondary-900 p-6 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm hover:border-primary-300 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/40 dark:hover:shadow-orange-500/40">
                                         <CheckCircle2 className="w-8 h-8 text-primary-600 mb-4" />
-                                        <h3 className="text-lg font-bold text-secondary-900 mb-2">{item.title}</h3>
-                                        <p className="text-sm text-secondary-600 leading-relaxed">{item.desc}</p>
+                                        <h3 className="text-lg font-bold text-secondary-900 dark:text-white mb-2">{item.title}</h3>
+                                        <p className="text-sm text-secondary-600 dark:text-secondary-300 leading-relaxed">{item.desc}</p>
                                     </div>
                                 ))}
                             </div>

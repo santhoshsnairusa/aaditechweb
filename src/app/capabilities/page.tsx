@@ -61,11 +61,11 @@ export default function CapabilitiesPage() {
     ];
 
     return (
-        <div className="bg-white min-h-screen">
-            <div className="bg-secondary-50 py-16 border-b border-secondary-200">
+        <div className="bg-white dark:bg-secondary-900 min-h-screen">
+            <div className="bg-secondary-50 dark:bg-secondary-950 py-16 border-b border-secondary-200 dark:border-secondary-700">
                 <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-4xl font-extrabold text-secondary-900 tracking-tight">Engineering Capabilities</h1>
-                    <p className="mt-4 text-xl text-secondary-600 max-w-3xl">
+                    <h1 className="text-4xl font-extrabold text-secondary-900 dark:text-white tracking-tight">Engineering Capabilities</h1>
+                    <p className="mt-4 text-xl text-secondary-600 dark:text-secondary-300 max-w-3xl">
                         Our multidisciplinary expertise directly translates to reduced technical risk and accelerated deployment for our customers.
                     </p>
                 </div>
@@ -78,10 +78,10 @@ export default function CapabilitiesPage() {
                             <div className="absolute top-0 left-0 bottom-0 w-1 bg-primary-100 rounded-full"></div>
                             <div className="absolute top-2 left-[-3px] w-2.5 h-2.5 rounded-full bg-primary-500 ring-4 ring-white"></div>
 
-                            <h2 className="text-xl font-bold text-secondary-900 mb-6">{section.title}</h2>
+                            <h2 className="text-xl font-bold text-secondary-900 dark:text-white mb-6">{section.title}</h2>
                             <ul className="space-y-4">
                                 {section.items.map((item, itemIdx) => (
-                                    <li key={itemIdx} className="text-secondary-700 bg-white border border-secondary-100 rounded-lg p-3 shadow-sm text-sm font-medium">
+                                    <li key={itemIdx} className="text-secondary-700 dark:text-secondary-200 bg-white dark:bg-secondary-900 border border-secondary-100 dark:border-secondary-800 rounded-lg p-3 shadow-sm text-sm font-medium">
                                         {item}
                                     </li>
                                 ))}

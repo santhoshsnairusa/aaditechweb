@@ -87,11 +87,11 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-16 border-t border-secondary-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-base text-secondary-500">
+                    <p className="text-base text-secondary-500 dark:text-secondary-400">
                         &copy; {new Date().getFullYear()} AADIT Techno Solutions. All rights reserved.
                     </p>
                     <div className="flex space-x-6">
-                        <span className="text-secondary-500 text-sm">Empowering the Future of Engineering</span>
+                        <span className="text-secondary-500 dark:text-secondary-400 text-sm">Empowering the Future of Engineering</span>
                     </div>
                 </div>
             </div>

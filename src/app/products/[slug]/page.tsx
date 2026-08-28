@@ -37,27 +37,27 @@ export default async function ProductDetailPage({ params }: Props) {
     }
 
     return (
-        <div className="bg-white min-h-screen pb-20">
+        <div className="bg-white dark:bg-secondary-900 min-h-screen pb-20">
             {/* Breadcrumb Header */}
-            <div className="bg-secondary-50 border-b border-secondary-200 py-4">
-                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center text-sm text-secondary-500">
+            <div className="bg-secondary-50 dark:bg-secondary-950 border-b border-secondary-200 dark:border-secondary-700 py-4">
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center text-sm text-secondary-500 dark:text-secondary-400">
                     <Link href="/" className="hover:text-primary-600">Home</Link>
                     <ChevronRight className="w-4 h-4 mx-2" />
                     <Link href="/products" className="hover:text-primary-600">Products</Link>
                     <ChevronRight className="w-4 h-4 mx-2" />
-                    <span className="text-secondary-900 font-medium">{product.name}</span>
+                    <span className="text-secondary-900 dark:text-white font-medium">{product.name}</span>
                 </div>
             </div>
 
             <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-                <Link href="/products" className="inline-flex items-center text-sm font-medium text-secondary-500 hover:text-primary-600 mb-8 transition-colors">
+                <Link href="/products" className="inline-flex items-center text-sm font-medium text-secondary-500 dark:text-secondary-400 hover:text-primary-600 mb-8 transition-colors">
                     <ChevronLeft className="w-4 h-4 mr-1" /> Back to Products
                 </Link>
 
                 {/* Product Hero */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                     {/* Image */}
-                    <div className="bg-white border text-secondary-300 border-secondary-200 rounded-2xl overflow-hidden relative aspect-square shadow-sm flex flex-col justify-center items-center">
+                    <div className="bg-white dark:bg-secondary-900 border text-secondary-300 border-secondary-200 dark:border-secondary-700 rounded-2xl overflow-hidden relative aspect-square shadow-sm flex flex-col justify-center items-center">
                         <span className="z-0 mb-4">{product.image}</span>
                         <Image
                             src={product.image}
@@ -75,17 +75,17 @@ export default async function ProductDetailPage({ params }: Props) {
                                 {product.category}
                             </span>
                         </div>
-                        <h1 className="text-3xl sm:text-4xl font-extrabold text-secondary-900 tracking-tight mb-4 text-balance">
+                        <h1 className="text-3xl sm:text-4xl font-extrabold text-secondary-900 dark:text-white tracking-tight mb-4 text-balance">
                             {product.name}
                         </h1>
-                        <p className="text-lg text-secondary-600 mb-8 leading-relaxed">
+                        <p className="text-lg text-secondary-600 dark:text-secondary-300 mb-8 leading-relaxed">
                             {product.shortDescription}
                         </p>
 
                         {/* Key Features Quick List */}
                         <ul className="space-y-3 mb-10">
                             {product.features.slice(0, 3).map((feat, idx) => (
-                                <li key={idx} className="flex items-start text-secondary-700 font-medium">
+                                <li key={idx} className="flex items-start text-secondary-700 dark:text-secondary-200 font-medium">
                                     <CheckCircle2 className="w-5 h-5 text-primary-500 mr-3 flex-shrink-0 mt-0.5" />
                                     {feat}
                                 </li>
@@ -101,7 +101,7 @@ export default async function ProductDetailPage({ params }: Props) {
                             </Link>
                             <Link
                                 href="/contact"
-                                className="inline-flex justify-center items-center px-8 py-3.5 border border-secondary-300 rounded-md shadow-sm text-base font-medium text-secondary-700 bg-white hover:bg-secondary-50 transition-colors"
+                                className="inline-flex justify-center items-center px-8 py-3.5 border border-secondary-300 dark:border-secondary-600 rounded-md shadow-sm text-base font-medium text-secondary-700 dark:text-secondary-200 bg-white dark:bg-secondary-900 hover:bg-secondary-50 dark:bg-secondary-950 transition-colors"
                             >
                                 Discuss Customization
                             </Link>
@@ -110,25 +110,25 @@ export default async function ProductDetailPage({ params }: Props) {
                 </div>
 
                 {/* Extended Details Tabs / Sections */}
-                <div className="mt-20 border-t border-secondary-200 pt-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="mt-20 border-t border-secondary-200 dark:border-secondary-700 pt-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
                     <div className="lg:col-span-8 space-y-16">
 
                         {/* Description */}
                         <section>
-                            <h2 className="text-2xl font-bold text-secondary-900 mb-6">Overview</h2>
-                            <div className="prose prose-primary max-w-none text-secondary-600">
+                            <h2 className="text-2xl font-bold text-secondary-900 dark:text-white mb-6">Overview</h2>
+                            <div className="prose prose-primary max-w-none text-secondary-600 dark:text-secondary-300">
                                 <p className="leading-relaxed">{product.description}</p>
                             </div>
                         </section>
 
                         {/* Features full list */}
                         <section>
-                            <h2 className="text-2xl font-bold text-secondary-900 mb-6">Comprehensive Features</h2>
+                            <h2 className="text-2xl font-bold text-secondary-900 dark:text-white mb-6">Comprehensive Features</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {product.features.map((feat, idx) => (
-                                    <div key={idx} className="flex items-start bg-secondary-50 p-4 rounded-lg border border-secondary-100">
+                                    <div key={idx} className="flex items-start bg-secondary-50 dark:bg-secondary-950 p-4 rounded-lg border border-secondary-100 dark:border-secondary-800">
                                         <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                        <span className="text-secondary-700 text-sm leading-relaxed">{feat}</span>
+                                        <span className="text-secondary-700 dark:text-secondary-200 text-sm leading-relaxed">{feat}</span>
                                     </div>
                                 ))}
                             </div>
@@ -136,16 +136,16 @@ export default async function ProductDetailPage({ params }: Props) {
 
                         {/* Technical Specifications */}
                         <section>
-                            <h2 className="text-2xl font-bold text-secondary-900 mb-6">Technical Specifications</h2>
-                            <div className="bg-white border border-secondary-200 rounded-xl overflow-hidden">
+                            <h2 className="text-2xl font-bold text-secondary-900 dark:text-white mb-6">Technical Specifications</h2>
+                            <div className="bg-white dark:bg-secondary-900 border border-secondary-200 dark:border-secondary-700 rounded-xl overflow-hidden">
                                 <table className="min-w-full divide-y divide-secondary-200">
                                     <tbody className="divide-y divide-secondary-100">
                                         {product.specifications.map((spec, idx) => (
-                                            <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-secondary-50'}>
-                                                <td className="py-4 px-6 text-sm font-medium text-secondary-900 w-1/3 border-r border-secondary-100">
+                                            <tr key={idx} className={idx % 2 === 0 ? 'bg-white dark:bg-secondary-900' : 'bg-secondary-50 dark:bg-secondary-950'}>
+                                                <td className="py-4 px-6 text-sm font-medium text-secondary-900 dark:text-white w-1/3 border-r border-secondary-100 dark:border-secondary-800">
                                                     {spec.label}
                                                 </td>
-                                                <td className="py-4 px-6 text-sm text-secondary-600">
+                                                <td className="py-4 px-6 text-sm text-secondary-600 dark:text-secondary-300">
                                                     {spec.value}
                                                 </td>
                                             </tr>

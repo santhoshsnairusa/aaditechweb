@@ -14,7 +14,7 @@ export default async function ProductsPage() {
     const categories = await productService.getCategories();
 
     return (
-        <div className="bg-secondary-50 min-h-screen">
+        <div className="bg-secondary-50 dark:bg-secondary-950 min-h-screen">
             {/* Page Header */}
             <div className="bg-secondary-900 py-16">
                 <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,8 +31,8 @@ export default async function ProductsPage() {
 
                 {/* Sidebar / Filters (Static for MVP) */}
                 <div className="w-full md:w-64 flex-shrink-0">
-                    <div className="bg-white p-6 rounded-xl border border-secondary-200 shadow-sm sticky top-28">
-                        <div className="flex items-center gap-2 font-bold text-secondary-900 mb-4 pb-4 border-b border-secondary-100">
+                    <div className="bg-white dark:bg-secondary-900 p-6 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm sticky top-28">
+                        <div className="flex items-center gap-2 font-bold text-secondary-900 dark:text-white mb-4 pb-4 border-b border-secondary-100 dark:border-secondary-800">
                             <Filter className="w-5 h-5" />
                             Categories
                         </div>
@@ -42,7 +42,7 @@ export default async function ProductsPage() {
                             </li>
                             {categories.map(cat => (
                                 <li key={cat}>
-                                    <Link href={`#${cat.replace(/\\s+/g, '-').toLowerCase()}`} className="text-secondary-600 text-sm hover:text-primary-600 transition-colors">
+                                    <Link href={`#${cat.replace(/\\s+/g, '-').toLowerCase()}`} className="text-secondary-600 dark:text-secondary-300 text-sm hover:text-primary-600 transition-colors">
                                         {cat}
                                     </Link>
                                 </li>
@@ -57,14 +57,14 @@ export default async function ProductsPage() {
                         const categoryProducts = products.filter(p => p.category === category);
                         return (
                             <div key={category} id={category.replace(/\\s+/g, '-').toLowerCase()} className="mb-16 scroll-mt-32">
-                                <h2 className="text-2xl font-bold text-secondary-900 border-b-2 border-primary-500 pb-2 mb-6 inline-block">
+                                <h2 className="text-2xl font-bold text-secondary-900 dark:text-white border-b-2 border-primary-500 pb-2 mb-6 inline-block">
                                     {category}
                                 </h2>
 
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                                     {categoryProducts.map(product => (
-                                        <div key={product.id} className="bg-white rounded-xl border border-secondary-200 shadow-sm overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                                            <div className="h-56 bg-white relative overflow-hidden flex items-center justify-center">
+                                        <div key={product.id} className="bg-white dark:bg-secondary-900 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary-500/40 dark:hover:shadow-orange-500/40 transition-shadow">
+                                            <div className="h-56 bg-white dark:bg-secondary-900 relative overflow-hidden flex items-center justify-center">
                                                 <Image
                                                     src={product.image}
                                                     alt={product.name}
@@ -74,8 +74,8 @@ export default async function ProductsPage() {
                                                 />
                                             </div>
                                             <div className="p-6 flex-grow flex flex-col">
-                                                <h3 className="text-lg font-bold text-secondary-900 mb-2">{product.name}</h3>
-                                                <p className="text-sm text-secondary-600 mb-6 flex-grow">
+                                                <h3 className="text-lg font-bold text-secondary-900 dark:text-white mb-2">{product.name}</h3>
+                                                <p className="text-sm text-secondary-600 dark:text-secondary-300 mb-6 flex-grow">
                                                     {product.shortDescription}
                                                 </p>
                                                 <Link href={`/products/${product.slug}`} className="mt-auto group inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-700">

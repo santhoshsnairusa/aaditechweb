@@ -56,13 +56,13 @@ function ContactForm() {
         return (
             <div className="bg-primary-50 p-8 rounded-xl border border-primary-200 text-center flex flex-col items-center justify-center h-full min-h-[400px]">
                 <CheckCircle className="w-16 h-16 text-primary-500 mb-6" />
-                <h3 className="text-2xl font-bold text-secondary-900 mb-4">Request Sent Successfully</h3>
-                <p className="text-secondary-600 mb-8 max-w-md">
+                <h3 className="text-2xl font-bold text-secondary-900 dark:text-white mb-4">Request Sent Successfully</h3>
+                <p className="text-secondary-600 dark:text-secondary-300 mb-8 max-w-md">
                     Thank you for exploring solutions with AADIT Techno Solutions. Our engineering and sales team will review your requirements and reach out very shortly.
                 </p>
                 <button
                     onClick={() => setStatus("idle")}
-                    className="px-6 py-2 bg-white border border-secondary-300 rounded-md shadow-sm font-medium text-secondary-700 hover:bg-secondary-50 transition-colors"
+                    className="px-6 py-2 bg-white dark:bg-secondary-900 border border-secondary-300 dark:border-secondary-600 rounded-md shadow-sm font-medium text-secondary-700 dark:text-secondary-200 hover:bg-secondary-50 dark:bg-secondary-950 transition-colors"
                 >
                     Send another message
                 </button>
@@ -71,8 +71,8 @@ function ContactForm() {
     }
 
     return (
-        <div className="bg-white p-8 rounded-xl shadow-lg border border-secondary-200">
-            <h3 className="text-2xl font-bold text-secondary-900 mb-6">Send an Enquiry</h3>
+        <div className="bg-white dark:bg-secondary-900 p-8 rounded-xl shadow-lg border border-secondary-200 dark:border-secondary-700">
+            <h3 className="text-2xl font-bold text-secondary-900 dark:text-white mb-6">Send an Enquiry</h3>
 
             {status === "error" && (
                 <div className="bg-red-50 text-red-700 p-4 rounded-md mb-6 border border-red-100 text-sm font-medium text-center">
@@ -83,34 +83,34 @@ function ContactForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-secondary-700">Name *</label>
-                        <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white" />
+                        <label htmlFor="name" className="block text-sm font-medium text-secondary-700 dark:text-secondary-200">Name *</label>
+                        <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 dark:border-secondary-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white dark:bg-secondary-900" />
                     </div>
                     <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-secondary-700">Company</label>
-                        <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white" />
+                        <label htmlFor="company" className="block text-sm font-medium text-secondary-700 dark:text-secondary-200">Company</label>
+                        <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 dark:border-secondary-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white dark:bg-secondary-900" />
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-secondary-700">Email *</label>
-                        <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white" />
+                        <label htmlFor="email" className="block text-sm font-medium text-secondary-700 dark:text-secondary-200">Email *</label>
+                        <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 dark:border-secondary-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white dark:bg-secondary-900" />
                     </div>
                     <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-secondary-700">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required value={formData.phone} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white" />
+                        <label htmlFor="phone" className="block text-sm font-medium text-secondary-700 dark:text-secondary-200">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required value={formData.phone} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 dark:border-secondary-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white dark:bg-secondary-900" />
                     </div>
                 </div>
 
                 <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-secondary-700">Subject</label>
-                    <input type="text" id="subject" name="subject" required value={formData.subject} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white" />
+                    <label htmlFor="subject" className="block text-sm font-medium text-secondary-700 dark:text-secondary-200">Subject</label>
+                    <input type="text" id="subject" name="subject" required value={formData.subject} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 dark:border-secondary-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white dark:bg-secondary-900" />
                 </div>
 
                 <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-secondary-700">Message *</label>
-                    <textarea id="message" name="message" rows={4} required value={formData.message} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white"></textarea>
+                    <label htmlFor="message" className="block text-sm font-medium text-secondary-700 dark:text-secondary-200">Message *</label>
+                    <textarea id="message" name="message" rows={4} required value={formData.message} onChange={handleChange} className="mt-1 block w-full border border-secondary-300 dark:border-secondary-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm bg-white dark:bg-secondary-900"></textarea>
                 </div>
 
                 <div>
@@ -130,7 +130,7 @@ function ContactForm() {
 
 export default function ContactPage() {
     return (
-        <div className="bg-secondary-50 min-h-screen">
+        <div className="bg-secondary-50 dark:bg-secondary-950 min-h-screen">
             {/* Header */}
             <div className="bg-secondary-900 py-16">
                 <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -148,8 +148,8 @@ export default function ContactPage() {
 
                     {/* Contact Details pane */}
                     <div className="lg:col-span-4 space-y-8">
-                        <div className="bg-white p-8 rounded-xl shadow-lg border border-secondary-200 sticky top-28">
-                            <h2 className="text-xl font-bold text-secondary-900 mb-8 border-b border-secondary-100 pb-4">Corporate Office</h2>
+                        <div className="bg-white dark:bg-secondary-900 p-8 rounded-xl shadow-lg border border-secondary-200 dark:border-secondary-700 sticky top-28">
+                            <h2 className="text-xl font-bold text-secondary-900 dark:text-white mb-8 border-b border-secondary-100 dark:border-secondary-800 pb-4">Corporate Office</h2>
 
                             <div className="space-y-6">
                                 <div className="flex items-start">
@@ -157,8 +157,8 @@ export default function ContactPage() {
                                         <MapPin className="h-5 w-5 text-primary-600" aria-hidden="true" />
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-sm font-semibold text-secondary-900">Address</h3>
-                                        <p className="mt-1 text-sm text-secondary-600 leading-relaxed">
+                                        <h3 className="text-sm font-semibold text-secondary-900 dark:text-white">Address</h3>
+                                        <p className="mt-1 text-sm text-secondary-600 dark:text-secondary-300 leading-relaxed">
                                             AADIT TECHNO SOLUTIONS<br />
                                             B-608, The Platina<br />
                                             Gachibowli, Hyderabad, India
@@ -171,8 +171,8 @@ export default function ContactPage() {
                                         <Phone className="h-5 w-5 text-primary-600" aria-hidden="true" />
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-sm font-semibold text-secondary-900">Phone</h3>
-                                        <p className="mt-1 text-sm text-secondary-600">+91 9160490891</p>
+                                        <h3 className="text-sm font-semibold text-secondary-900 dark:text-white">Phone</h3>
+                                        <p className="mt-1 text-sm text-secondary-600 dark:text-secondary-300">+91 9160490891</p>
                                     </div>
                                 </div>
 
@@ -181,8 +181,8 @@ export default function ContactPage() {
                                         <Mail className="h-5 w-5 text-primary-600" aria-hidden="true" />
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-sm font-semibold text-secondary-900">Email</h3>
-                                        <p className="mt-1 text-sm text-secondary-600">
+                                        <h3 className="text-sm font-semibold text-secondary-900 dark:text-white">Email</h3>
+                                        <p className="mt-1 text-sm text-secondary-600 dark:text-secondary-300">
                                             <a href="mailto:sales.aadit@gmail.com" className="hover:text-primary-600 transition-colors">sales.aadit@gmail.com</a>
                                         </p>
                                     </div>
@@ -193,7 +193,7 @@ export default function ContactPage() {
 
                     {/* Form Pane */}
                     <div className="lg:col-span-8">
-                        <Suspense fallback={<div className="bg-white p-8 rounded-xl shadow border border-secondary-200 h-96 flex items-center justify-center"><div className="animate-spin w-8 h-8 rounded-full border-4 border-primary-200 border-t-primary-600"></div></div>}>
+                        <Suspense fallback={<div className="bg-white dark:bg-secondary-900 p-8 rounded-xl shadow border border-secondary-200 dark:border-secondary-700 h-96 flex items-center justify-center"><div className="animate-spin w-8 h-8 rounded-full border-4 border-primary-200 border-t-primary-600"></div></div>}>
                             <ContactForm />
                         </Suspense>
                     </div>
