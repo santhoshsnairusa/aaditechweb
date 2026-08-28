@@ -28,7 +28,7 @@ export default function Header() {
                     <div className="flex-shrink-0 flex items-center">
                         <Link href="/" className="flex items-center gap-2 group flex-row">
                             {/* Global Logo */}
-                            <img src="/images/Logo_steel_no_bg_4.png" alt="AADIT Logo" className="h-12 md:h-16 w-auto object-contain bg-transparent" />
+                            <img src="/images/logo_no_txt_no_bg_1.png" alt="AADIT Logo" className="h-12 md:h-16 w-auto object-contain bg-transparent" />
 
                             <span className="font-bold italic text-lg text-secondary-900 tracking-tight hidden md:inline-block">
                                 AADIT <span className="text-black">TECHNO SOLUTIONS</span>
