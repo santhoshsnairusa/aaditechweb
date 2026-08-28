@@ -131,20 +131,24 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.slice(0, 6).map((product) => (
-              <Link href={`/products/${product.slug}`} key={product.id} className="group flex flex-col bg-white dark:bg-secondary-900 border border-secondary-200 dark:border-secondary-700 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary-500/40 dark:hover:shadow-orange-500/40 transition-all duration-300">
-                <div className="h-48 bg-secondary-100 dark:bg-secondary-800 relative overflow-hidden flex items-center justify-center object-cover">
-                  {/* Placeholder for Product Image */}
-                  <div className="absolute inset-0 bg-secondary-200 dark:bg-secondary-700 flex items-center justify-center text-secondary-400 group-hover:scale-105 transition-transform duration-500">
-                    <span className="font-medium">Product Image<br />{product.name}</span>
-                  </div>
+          {/* Native Sliding Carousel Track */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-8 pt-2 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth">
+            {featuredProducts.map((product) => (
+              <Link href={`/products/${product.slug}`} key={product.id} className="w-[85vw] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] shrink-0 snap-start group flex flex-col bg-white dark:bg-secondary-900 border border-secondary-200 dark:border-secondary-700 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary-500/40 dark:hover:shadow-orange-500/40 transition-all duration-300">
+                <div className="h-56 bg-secondary-50 dark:bg-secondary-800 relative overflow-hidden flex items-center justify-center border-b border-secondary-100 dark:border-secondary-700">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    unoptimized
+                    className="object-contain p-6 drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <span className="text-xs font-semibold text-primary-600 uppercase tracking-wider mb-2">{product.category}</span>
                   <h3 className="text-lg font-bold text-secondary-900 dark:text-white mb-2 group-hover:text-primary-600 transition-colors">{product.name}</h3>
-                  <p className="text-secondary-600 dark:text-secondary-300 text-sm mb-4 line-clamp-3 flex-grow">{product.shortDescription}</p>
-                  <div className="mt-auto flex items-center text-sm font-medium text-primary-600">
+                  <p className="text-secondary-600 dark:text-secondary-300 text-sm mb-6 flex-grow line-clamp-3">{product.shortDescription}</p>
+                  <div className="mt-auto flex items-center text-sm font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
                     View Details <ArrowRight className="ml-1.5 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>

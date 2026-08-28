@@ -1,5 +1,6 @@
 import { productService } from '@/services/productService';
 import type { Metadata } from 'next';
+import ProductsFeaturedCarousel from './ProductsFeaturedCarousel';
 import ProductCatalogClient from './ProductCatalogClient';
 
 export const metadata: Metadata = {
@@ -24,6 +25,9 @@ export default async function ProductsPage() {
                     </p>
                 </div>
             </div>
+
+            {/* Automated Dynamic Featured Carousel */}
+            <ProductsFeaturedCarousel products={products} />
 
             <ProductCatalogClient products={products} categories={categories} />
         </div>
