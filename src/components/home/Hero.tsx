@@ -168,7 +168,12 @@ export default function Hero() {
 
                         <div
                             className="w-full h-full relative transition-transform duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] z-10"
-                            style={{ transformStyle: 'preserve-3d', transform: `translateZ(-192.7px) rotateY(${currentSlide * -(360 / Math.max(carouselProducts.length, 1))}deg)` }}
+                            style={{
+                                transformStyle: 'preserve-3d',
+                                WebkitTransformStyle: 'preserve-3d',
+                                transform: `translateZ(-192.7px) rotateY(${currentSlide * -(360 / Math.max(carouselProducts.length, 1))}deg)`,
+                                WebkitTransform: `translateZ(-192.7px) rotateY(${currentSlide * -(360 / Math.max(carouselProducts.length, 1))}deg)`
+                            }}
                         >
                             {carouselProducts.map((product, idx) => {
                                 const angle = idx * (360 / carouselProducts.length);
@@ -180,7 +185,9 @@ export default function Hero() {
                                         style={{
                                             pointerEvents: idx === currentSlide ? 'auto' : 'none',
                                             transform: `rotateY(${angle}deg) translateZ(192.7px)`,
-                                            backfaceVisibility: 'hidden'
+                                            WebkitTransform: `rotateY(${angle}deg) translateZ(192.7px)`,
+                                            backfaceVisibility: 'hidden',
+                                            WebkitBackfaceVisibility: 'hidden'
                                         }}
                                     >
                                         <div className="h-44 bg-secondary-50 dark:bg-secondary-800 relative p-4 border-b border-secondary-100 dark:border-secondary-700">

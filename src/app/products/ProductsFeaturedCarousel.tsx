@@ -12,6 +12,30 @@ export default function ProductsFeaturedCarousel({ products }: { products: Produ
     const [tz, setTz] = useState(616.6); // Default for max-w-4xl (896px) width
     const containerRef = useRef<HTMLDivElement>(null);
 
+    const touchStartX = useRef(0);
+    const touchEndX = useRef(0);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.targetTouches[0].clientX;
+        touchEndX.current = e.targetTouches[0].clientX;
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        touchEndX.current = e.targetTouches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        if (!touchStartX.current || !touchEndX.current) return;
+        const diff = touchStartX.current - touchEndX.current;
+        if (diff > 50) {
+            setCurrentSlide((prev) => (prev + 1) % featuredProducts.length);
+        } else if (diff < -50) {
+            setCurrentSlide((prev) => (prev - 1 + featuredProducts.length) % featuredProducts.length);
+        }
+        touchStartX.current = 0;
+        touchEndX.current = 0;
+    };
+
     useEffect(() => {
         const calculateTz = () => {
             if (containerRef.current) {
@@ -44,10 +68,30 @@ export default function ProductsFeaturedCarousel({ products }: { products: Produ
                 <div
                     ref={containerRef}
                     className="relative w-full max-w-4xl mx-auto h-[480px] md:h-[400px] [perspective:1500px]"
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                 >
+                    {/* Interactive Invisible Tap Zones for Navigation */}
                     <div
-                        className="w-full h-full relative transition-transform duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)]"
-                        style={{ transformStyle: 'preserve-3d', transform: `translateZ(-${tz}px) rotateY(${currentSlide * -(360 / Math.max(featuredProducts.length, 1))}deg)` }}
+                        className="absolute top-0 bottom-16 md:bottom-0 left-0 w-1/4 md:w-32 z-50 cursor-pointer hidden sm:block max-sm:block"
+                        onClick={(e) => { e.preventDefault(); setCurrentSlide((prev) => (prev - 1 + featuredProducts.length) % featuredProducts.length); }}
+                        aria-label="Previous slide"
+                    />
+                    <div
+                        className="absolute top-0 bottom-16 md:bottom-0 right-0 w-1/4 md:w-32 z-50 cursor-pointer hidden sm:block max-sm:block"
+                        onClick={(e) => { e.preventDefault(); setCurrentSlide((prev) => (prev + 1) % featuredProducts.length); }}
+                        aria-label="Next slide"
+                    />
+
+                    <div
+                        className="w-full h-full relative transition-transform duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] z-10"
+                        style={{
+                            transformStyle: 'preserve-3d',
+                            WebkitTransformStyle: 'preserve-3d',
+                            transform: `translateZ(-${tz}px) rotateY(${currentSlide * -(360 / Math.max(featuredProducts.length, 1))}deg)`,
+                            WebkitTransform: `translateZ(-${tz}px) rotateY(${currentSlide * -(360 / Math.max(featuredProducts.length, 1))}deg)`
+                        }}
                     >
                         {featuredProducts.map((product, idx) => {
                             const angle = idx * (360 / featuredProducts.length);
@@ -59,7 +103,9 @@ export default function ProductsFeaturedCarousel({ products }: { products: Produ
                                     style={{
                                         pointerEvents: idx === currentSlide ? 'auto' : 'none',
                                         transform: `rotateY(${angle}deg) translateZ(${tz}px)`,
-                                        backfaceVisibility: 'hidden'
+                                        WebkitTransform: `rotateY(${angle}deg) translateZ(${tz}px)`,
+                                        backfaceVisibility: 'hidden',
+                                        WebkitBackfaceVisibility: 'hidden'
                                     }}
                                 >
                                     <div className="w-full md:w-1/2 h-56 md:h-full bg-white dark:bg-secondary-900 relative p-6 border-b md:border-b-0 md:border-r border-secondary-100 dark:border-secondary-700">
