@@ -28,9 +28,9 @@ export default function ProductsFeaturedCarousel({ products }: { products: Produ
         if (!touchStartX.current || !touchEndX.current) return;
         const diff = touchStartX.current - touchEndX.current;
         if (diff > 50) {
-            setCurrentSlide((prev) => (prev + 1) % featuredProducts.length);
+            setCurrentSlide((prev) => (prev + 1));
         } else if (diff < -50) {
-            setCurrentSlide((prev) => (prev - 1 + featuredProducts.length) % featuredProducts.length);
+            setCurrentSlide((prev) => (prev - 1));
         }
         touchStartX.current = 0;
         touchEndX.current = 0;
@@ -53,12 +53,14 @@ export default function ProductsFeaturedCarousel({ products }: { products: Produ
 
     useEffect(() => {
         const slideTimer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % featuredProducts.length);
+            setCurrentSlide((prev) => (prev + 1));
         }, 10000); // 10 second interval exactly as requested
         return () => clearInterval(slideTimer);
     }, [featuredProducts.length]);
 
     if (featuredProducts.length === 0) return null;
+
+    const activeIndex = ((currentSlide % featuredProducts.length) + featuredProducts.length) % featuredProducts.length;
 
     return (
         <div className="w-full bg-secondary-100 dark:bg-secondary-900/50 border-b border-secondary-200 dark:border-secondary-800 py-10 overflow-hidden">
@@ -75,12 +77,12 @@ export default function ProductsFeaturedCarousel({ products }: { products: Produ
                     {/* Interactive Invisible Tap Zones for Navigation */}
                     <div
                         className="absolute top-0 bottom-16 md:bottom-0 left-0 w-1/4 md:w-32 z-50 cursor-pointer hidden sm:block max-sm:block"
-                        onClick={(e) => { e.preventDefault(); setCurrentSlide((prev) => (prev - 1 + featuredProducts.length) % featuredProducts.length); }}
+                        onClick={(e) => { e.preventDefault(); setCurrentSlide((prev) => (prev - 1)); }}
                         aria-label="Previous slide"
                     />
                     <div
                         className="absolute top-0 bottom-16 md:bottom-0 right-0 w-1/4 md:w-32 z-50 cursor-pointer hidden sm:block max-sm:block"
-                        onClick={(e) => { e.preventDefault(); setCurrentSlide((prev) => (prev + 1) % featuredProducts.length); }}
+                        onClick={(e) => { e.preventDefault(); setCurrentSlide((prev) => (prev + 1)); }}
                         aria-label="Next slide"
                     />
 
@@ -101,7 +103,7 @@ export default function ProductsFeaturedCarousel({ products }: { products: Produ
                                     key={product.id}
                                     className="absolute inset-0 bg-white dark:bg-secondary-800 border border-secondary-200 dark:border-secondary-700 overflow-hidden shadow-2xl flex flex-col md:flex-row group"
                                     style={{
-                                        pointerEvents: idx === currentSlide ? 'auto' : 'none',
+                                        pointerEvents: idx === activeIndex ? 'auto' : 'none',
                                         transform: `rotateY(${angle}deg) translateZ(${tz}px)`,
                                         WebkitTransform: `rotateY(${angle}deg) translateZ(${tz}px)`,
                                         backfaceVisibility: 'hidden',
@@ -136,7 +138,7 @@ export default function ProductsFeaturedCarousel({ products }: { products: Produ
                             <button
                                 key={idx}
                                 onClick={(e) => { e.preventDefault(); setCurrentSlide(idx); }}
-                                className={`h-2 rounded-full transition-all duration-500 shadow-md ${idx === currentSlide ? 'w-8 bg-primary-500' : 'w-2 bg-secondary-300 dark:bg-secondary-600 hover:bg-secondary-400'}`}
+                                className={`h-2 rounded-full transition-all duration-500 shadow-md ${idx === activeIndex ? 'w-8 bg-primary-500' : 'w-2 bg-secondary-300 dark:bg-secondary-600 hover:bg-secondary-400'}`}
                                 aria-label={`Go to slide ${idx + 1}`}
                             />
                         ))}

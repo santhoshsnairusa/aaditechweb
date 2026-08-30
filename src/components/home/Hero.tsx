@@ -15,8 +15,12 @@ export default function Hero() {
         products.find(p => p.category === cat && p.featured) || products.find(p => p.category === cat)
     ).filter((p): p is typeof products[0] => p !== undefined);
 
-    const isMobileTextPhase = sequenceIndex === 0;
-    const currentSlide = sequenceIndex > 0 ? (sequenceIndex - 1) : 0;
+    const cycleLength = carouselProducts.length + 1 || 1;
+    const phaseIndex = ((sequenceIndex % cycleLength) + cycleLength) % cycleLength;
+    const isMobileTextPhase = phaseIndex === 0;
+    const currentSlide = sequenceIndex - Math.floor((sequenceIndex + cycleLength - 1) / cycleLength);
+
+    const activeIndex = ((currentSlide % carouselProducts.length) + carouselProducts.length) % carouselProducts.length;
 
     const touchStartX = useRef(0);
     const touchEndX = useRef(0);
@@ -34,9 +38,9 @@ export default function Hero() {
         if (!touchStartX.current || !touchEndX.current) return;
         const diff = touchStartX.current - touchEndX.current;
         if (diff > 50) {
-            setSequenceIndex((prev) => (prev + 1) % (carouselProducts.length + 1));
+            setSequenceIndex((prev) => (prev + 1));
         } else if (diff < -50) {
-            setSequenceIndex((prev) => (prev - 1 + (carouselProducts.length + 1)) % (carouselProducts.length + 1));
+            setSequenceIndex((prev) => (prev - 1));
         }
         touchStartX.current = 0;
         touchEndX.current = 0;
@@ -58,7 +62,7 @@ export default function Hero() {
 
     useEffect(() => {
         const slideTimer = setInterval(() => {
-            setSequenceIndex((prev) => (prev + 1) % (carouselProducts.length + 1));
+            setSequenceIndex((prev) => (prev + 1));
         }, 10000);
         return () => clearInterval(slideTimer);
     }, [carouselProducts.length]);
@@ -157,12 +161,12 @@ export default function Hero() {
                         {/* Interactive Invisible Tap Zones for Mobile Navigation */}
                         <div
                             className="absolute top-0 bottom-16 left-0 w-1/3 z-50 cursor-pointer"
-                            onClick={(e) => { e.preventDefault(); setSequenceIndex((prev) => (prev - 1 + (carouselProducts.length + 1)) % (carouselProducts.length + 1)); }}
+                            onClick={(e) => { e.preventDefault(); setSequenceIndex((prev) => (prev - 1)); }}
                             aria-label="Previous slide"
                         />
                         <div
                             className="absolute top-0 bottom-16 right-0 w-1/3 z-50 cursor-pointer"
-                            onClick={(e) => { e.preventDefault(); setSequenceIndex((prev) => (prev + 1) % (carouselProducts.length + 1)); }}
+                            onClick={(e) => { e.preventDefault(); setSequenceIndex((prev) => (prev + 1)); }}
                             aria-label="Next slide"
                         />
 
@@ -183,7 +187,7 @@ export default function Hero() {
                                         key={product.id}
                                         className="absolute inset-0 bg-white dark:bg-secondary-900 border border-secondary-200 dark:border-secondary-700 overflow-hidden shadow-2xl flex flex-col"
                                         style={{
-                                            pointerEvents: idx === currentSlide ? 'auto' : 'none',
+                                            pointerEvents: idx === activeIndex ? 'auto' : 'none',
                                             transform: `rotateY(${angle}deg) translateZ(192.7px)`,
                                             WebkitTransform: `rotateY(${angle}deg) translateZ(192.7px)`,
                                             backfaceVisibility: 'hidden',
@@ -207,7 +211,7 @@ export default function Hero() {
                         {/* Carousel Indicators */}
                         <div className="absolute -bottom-10 left-0 right-0 flex justify-center gap-2 z-20">
                             {carouselProducts.map((_, idx) => (
-                                <div key={idx} className={`h-1.5 rounded-full transition-all duration-500 shadow-md ${idx === currentSlide ? 'w-6 bg-primary-500' : 'w-2 bg-secondary-300 dark:bg-secondary-600'}`} />
+                                <div key={idx} className={`h-1.5 rounded-full transition-all duration-500 shadow-md ${idx === activeIndex ? 'w-6 bg-primary-500' : 'w-2 bg-secondary-300 dark:bg-secondary-600'}`} />
                             ))}
                         </div>
                     </div>
